@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %} {% block content %}
+<h1>Оценки</h1>
+
+<ul>
+  {% for day in days %}
+
+  <li>{{day.date}}, {{day.estimate}}</li>
+
+  {% endfor %}
+</ul>
+
+
+
+{% endblock%}
