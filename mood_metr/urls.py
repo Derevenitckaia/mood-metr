@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 
-from blog.views import day_detail_view, all_estimate_view, estimate_create_view
+from blog.views import day_detail_view, all_estimate_view, estimate_create_view, delete_estimate
 from core.views import home_page
 
 from accounts.views import *
@@ -27,8 +27,9 @@ urlpatterns = [
 	path('register/', registerPage, name='register'),
 	path('blog/', day_detail_view),
 	path('home_page/', home_page, name='home'),
-	path('all_days/', all_estimate_view),
-	path('create_estimate/', estimate_create_view),
+	path('all_days/', all_estimate_view, name='all_days'),
+	path('create_estimate/', estimate_create_view, name='create_estimate'),
 	path('logout_user/', logout_user, name='logout' ),
     path('admin/', admin.site.urls),
+	path('delete_estimate/<estimate_id>', delete_estimate, name='delete'),
 ]

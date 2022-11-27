@@ -2,11 +2,18 @@
 
 {% block content %}
 
+<br></br>
+
+<h1 class='text-center'>Форма регистрации  </h1>
+
+<br></br>
+
+<div class="justify-content-center align-items-center">
 <form method='POST' >
 	{% csrf_token %}
-	{{form.as_p}}
-	<input type='submit' value='Submit' />
+	{{ form.as_p }}
+	<input type='submit' class="btn btn-primary" value='Зарегистрироваться' />
 </form>
-
+</div>
 
 {% endblock  %}

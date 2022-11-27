@@ -45,4 +45,4 @@ def loginPage(request):
 def logout_user(request):
 	messages.success(request, ('You were logged out'))
 	logout(request)
-	return redirect('home')
+	return redirect('login')

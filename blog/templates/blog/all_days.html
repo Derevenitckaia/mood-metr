@@ -1,14 +1,45 @@
 {% extends 'core/base.html' %} {% block content %}
-<h1>Оценки</h1>
+<br></br>
+<center>
+<h1>Добро пожаловать в <mark>Муд-Метр</mark></h1>
+</center>
+<br></br>
+<div class="container">
+<h1>График твоего настроения</h1>
 
-<ul>
+</div>
+<div class="container">
+	{{ chart|safe}}
+</div>
+
+
+
+<div class="container-sm">
+<h1>Оценки:</h1>
+</div>
+<div class="container">
   {% for day in days %}
 
-  <li>{{day.date}}, {{day.estimate}}</li>
+  
+	<div class="container text-center">
+		
+		<div class="row">
+		  <div class="col">{{day.date}} </div>
+		  
+		  
+		  <div class="col">
+			
+				{{day.estimate}}
+			
+		  </div>
+		  <div class="col-8">
+			<a  class="btn btn-danger" href="{% url 'delete' day.id %}">Удалить</a>
+		  </div>
+		</div>
+	  </div>
 
   {% endfor %}
-</ul>
-
+	</div>
 
 
 {% endblock%}

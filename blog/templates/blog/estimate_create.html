@@ -2,10 +2,16 @@
 
 {% block content %}
 
+<br>
+<h1> Оцени свой день </h1>
+</br>
+<p> Введи дату(YYYY-MM-DD) и оценку<p>
 <form method='POST' >
 	{% csrf_token %}
 	{{form.as_p}}
-	<input type='submit' value='Submit' />
+	<br>
+	<input type='submit' class="btn btn-primary" value='Submit' />
+</br>
 </form>
 
 
